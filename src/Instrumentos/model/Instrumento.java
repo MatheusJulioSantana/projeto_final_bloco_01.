@@ -4,12 +4,13 @@ public class Instrumento {
     private int id;
     private int tipo;
     private float valor;
-    private String instrumento;
+    private String nome;
+    
 
-    public Instrumento(int id, int tipo, String instrumento, float valor) {
+    public Instrumento(int id, int tipo, String nome, float valor) {
         this.id = id;
         this.tipo = tipo;
-        this.instrumento = instrumento;
+        this.nome = nome;
         this.valor = valor;
     }
 
@@ -38,21 +39,31 @@ public class Instrumento {
     }
 
     public String getInstrumento() {
-        return instrumento;
+        return nome;
     }
 
-    public void setInstrumento(String instrumento) {
-        this.instrumento = instrumento;
+    public void setInstrumento(String nome) {
+        this.nome = nome;
     }
 
     public void visualizar() {
-        String tipoStr = (this.tipo == 1) ? "Corda" : "Sopro";
+    	
+    	String tipo ="";
+    	switch(this.tipo) {
+		case 1:
+			tipo = "Corda";
+		break;
+		case 2:
+			tipo = "Sopro";
+		break;
+		}
 
         System.out.println("\n\n***********************************************************");
         System.out.println("Dados do produto: ");
         System.out.println("***********************************************************");
-        System.out.println("Número do produto: " + this.id);
-        System.out.println("Tipo do produto: " + tipoStr);
-        System.out.println("Preço do produto: " + this.valor);
+        System.out.println("Nome do instrumento: " + this.nome);
+        System.out.println("id do instrumento: " + this.id);
+        System.out.println("Tipo do instrumento: " + tipo);
+        System.out.println("Preço do instrumento: " + this.valor);
     }
 }
