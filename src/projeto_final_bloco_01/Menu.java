@@ -9,7 +9,7 @@ public class Menu {
 
     public static void main(String[] args) {
         int op, id, tipo;
-        String instrumento, cordas, pele;
+        String instrumento, cordas, sopro;
         float valor;
 
         while (true) {
